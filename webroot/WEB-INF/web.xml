@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE web-app [<!ENTITY sru_xml SYSTEM "sru.xml">]>
+
+<web-app version="2.4" xmlns="http://java.sun.com/xml/ns/j2ee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee 
+	http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
+
+
+	<filter>
+		<description>字符编码过滤器，指定 UTF-8</description>
+		<filter-name>CharsetFilter</filter-name>
+		<filter-class>jym.sim.util.CharsetFilter</filter-class>
+		<init-param>
+			<param-name>encode</param-name>
+			<param-value>UTF-8</param-value>
+		</init-param>
+	</filter>
+	
+	<filter-mapping>
+		<filter-name>CharsetFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+
+
+<servlet>
+	<servlet-name>data</servlet-name>
+	<servlet-class>wsl.rdf.servlet.Data</servlet-class>
+</servlet>
+
+<servlet-mapping>
+	<servlet-name>data</servlet-name>
+	<url-pattern>/data/*</url-pattern>
+</servlet-mapping>
+
+<servlet>
+	<servlet-name>ns</servlet-name>
+	<servlet-class>wsl.rdf.servlet.NameSpace</servlet-class>
+</servlet>
+
+<servlet-mapping>
+	<servlet-name>ns</servlet-name>
+	<url-pattern>/ns/*</url-pattern>
+</servlet-mapping>
+	
+
+	<welcome-file-list>
+		<welcome-file>rdf</welcome-file>
+	</welcome-file-list>
+</web-app>
