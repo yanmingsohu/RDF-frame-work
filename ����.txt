@@ -50,10 +50,12 @@ ref:datatype
 http://localhost/rdf
 	-- 基础地址
 	
-/ns/[table_name]/
+! /ns/[table_name]/
 	-- 该表的命名空间, 返回一个用来表述该表格的RDF
 	
 /data/[table_name]/?[params]
 	-- 查询该表的数据, params是参数, 直接使用表格列名+值来限制查询结果
 
+/data/default/?key=xxx
+	-- 默认的rdf查询
 

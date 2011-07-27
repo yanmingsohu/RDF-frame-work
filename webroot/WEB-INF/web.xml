@@ -26,26 +26,17 @@
 
 <servlet>
 	<servlet-name>data</servlet-name>
-	<servlet-class>wsl.rdf.servlet.Data</servlet-class>
+	<servlet-class>wsl.rdf.servlet.RdfServlet</servlet-class>
 </servlet>
 
 <servlet-mapping>
 	<servlet-name>data</servlet-name>
 	<url-pattern>/data/*</url-pattern>
 </servlet-mapping>
-
-<servlet>
-	<servlet-name>ns</servlet-name>
-	<servlet-class>wsl.rdf.servlet.NameSpace</servlet-class>
-</servlet>
-
-<servlet-mapping>
-	<servlet-name>ns</servlet-name>
-	<url-pattern>/ns/*</url-pattern>
-</servlet-mapping>
 	
 
 	<welcome-file-list>
-		<welcome-file>rdf</welcome-file>
+		<welcome-file>index.html</welcome-file>
 	</welcome-file-list>
+	
 </web-app>

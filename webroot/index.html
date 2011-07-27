@@ -1,0 +1,50 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>RDF</title>
+<style type="text/css">
+* {
+font-size: 12px;
+}
+
+p {
+margin-top: 30px;
+margin-bottom: 30px;
+}
+
+.line {
+height: 1px;
+background-color: gray;
+margin-top: 30px;
+}
+</style>
+</head>
+<body>
+
+<h3>RDF索引页</h3>
+<div class='line'></div>
+
+<p>
+检索一个RDF资源:(ID条件优先级最高)
+</p>
+
+
+<form action="data/default/">
+	模糊搜索单词<input name="key"/><br/>
+	精确查询ID号<input name='id'/>
+	<input type='submit' value="RDF search"/>
+</form>
+
+<div class='line'></div>
+
+<p>
+	使用chrome游览器可以直接查看RDF文件,IE需要另存
+</p>
+
+<p>
+	在源文件wsl/rdf/conf/datasource.conf中配置数据库连接
+</p>
+
+</body>
+</html>

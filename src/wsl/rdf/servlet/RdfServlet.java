@@ -1,4 +1,4 @@
-// CatfoOD 2011-7-26 下午09:48:04
+// CatfoOD 2011-7-27 下午01:48:44 yanming-sohu@sohu.com/@qq.com
 
 package wsl.rdf.servlet;
 
@@ -12,18 +12,17 @@ import javax.servlet.http.HttpServletResponse;
 import jym.sim.util.IServletData;
 import jym.sim.util.ServletData;
 
-public abstract class Base extends HttpServlet {
 
-	private static final long serialVersionUID = -1067400198581541766L;
-	private static final ThreadLocal<IServletData> 
-				hdata = new ThreadLocal<IServletData>();
+/**
+ * uri: /data/[table_name]/?[params]<br>
+ * 
+ * 自动根据table_name转发到指定的servlet
+ */
+public class RdfServlet extends HttpServlet {
 
-	/**
-	 * 应答请求
-	 */
-	protected abstract void exe(IServletData data) throws Exception;
+	private static final long serialVersionUID = 254841637358041281L;
 	
-	
+
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp)
 			throws ServletException, IOException {
@@ -36,16 +35,23 @@ public abstract class Base extends HttpServlet {
 			throws ServletException, IOException {
 
 		try {
-			IServletData sd = new ServletData(req, resp);
-			hdata.set(sd);
-			exe(sd);
+			/* 根据请求uri中的table_name值转发请求 */
+			String tname = getTableName(req);
+			Process process = Process.getProcess(tname);
+			
+			if (process!=null) {
+				IServletData sd = new ServletData(req, resp);
+				process.setData(sd);
+				process.exe();
+			} else {
+				throw new ServletException("该name: [" + tname + "] 没有实现");
+			}
 		} catch (Exception e) {
-			e.printStackTrace();
+			throw new ServletException(e);
 		}
 	}
 	
-	protected String getTableName() throws ServletException {
-		HttpServletRequest req = hdata.get().getHttpServletRequest();
+	protected String getTableName(HttpServletRequest req) throws ServletException {
 		
 		String uri = req.getRequestURI();
 		String suri = req.getServletPath();

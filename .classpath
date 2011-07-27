@@ -2,11 +2,10 @@
 <classpath>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
-	<classpathentry kind="var" path="TOMCAT_HOME/lib/servlet-api.jar"/>
-	<classpathentry kind="var" path="TOMCAT_HOME/lib/jasper.jar"/>
-	<classpathentry kind="var" path="TOMCAT_HOME/lib/jsp-api.jar"/>
-	<classpathentry kind="var" path="TOMCAT_HOME/lib/el-api.jar"/>
-	<classpathentry kind="var" path="TOMCAT_HOME/lib/annotations-api.jar"/>
-	<classpathentry kind="lib" path="webroot/WEB-INF/lib/sim.jar"/>
+	<classpathentry kind="lib" path="webroot/WEB-INF/lib/sim.jar" sourcepath="/sim"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/J2EE 1.4"/>
+	<classpathentry kind="lib" path="webroot/WEB-INF/lib/commons-dbcp-1.3.jar"/>
+	<classpathentry kind="lib" path="webroot/WEB-INF/lib/commons-pool-1.5.4.jar"/>
+	<classpathentry kind="lib" path="webroot/WEB-INF/lib/postgresql-8.2-506.jdbc2.jar"/>
 	<classpathentry kind="output" path="webroot/WEB-INF/classes"/>
 </classpath>
