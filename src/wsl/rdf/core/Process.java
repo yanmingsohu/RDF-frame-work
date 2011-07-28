@@ -1,6 +1,6 @@
 // CatfoOD 2011-7-26 下午09:48:04
 
-package wsl.rdf.servlet;
+package wsl.rdf.core;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -19,6 +19,9 @@ import jym.sim.util.ResourceLoader;
 import jym.sim.util.Tools;
 
 /**
+ * 处理器基础类<br>
+ * 负责注册处理器到容器中
+ * 
  * uri: /data/[table_name]/?[params]<br>
  * 实现类getRegisterName()返回的名字决定这个table_name<br>
  * 配置文件在 /wsl/rdf/conf/process.list

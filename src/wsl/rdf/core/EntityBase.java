@@ -1,13 +1,16 @@
 // CatfoOD 2011-7-27 下午03:39:21 yanming-sohu@sohu.com/@qq.com
 
-package wsl.rdf.dao;
+package wsl.rdf.core;
 
 import java.lang.reflect.Field;
 
 import jym.sim.util.Tools;
 
 
-public abstract class Entity {
+/**
+ * 实体基础类
+ */
+public abstract class EntityBase {
 
 	public String toString() {
 		StringBuilder out = new StringBuilder();
@@ -24,7 +27,7 @@ public abstract class Entity {
 					fs[i].setAccessible(true);
 					Object v = fs[i].get(this);
 					
-					if (v instanceof Entity) continue;
+					if (v instanceof EntityBase) continue;
 				
 					out.append("\t")
 						.append(fs[i].getName())

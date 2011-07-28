@@ -1,6 +1,6 @@
 // CatfoOD 2011-7-27 下午01:03:10 yanming-sohu@sohu.com/@qq.com
 
-package wsl.rdf.dao;
+package wsl.rdf.core;
 
 import javax.sql.DataSource;
 

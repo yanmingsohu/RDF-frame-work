@@ -1,6 +1,6 @@
 // CatfoOD 2011-7-27 下午02:48:13 yanming-sohu@sohu.com/@qq.com
 
-package wsl.rdf.dao.impl;
+package wsl.rdf.process;
 
 import java.sql.ResultSet;
 import java.sql.Statement;
@@ -9,7 +9,9 @@ import java.util.HashMap;
 import java.util.Map;
 
 import jym.sim.sql.ISql;
-import wsl.rdf.dao.DaoBase;
+import wsl.rdf.core.DaoBase;
+import wsl.rdf.struct.EntryItem;
+import wsl.rdf.struct.RequestBean;
 
 
 public class DefaultDao extends DaoBase {

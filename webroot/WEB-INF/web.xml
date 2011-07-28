@@ -26,7 +26,7 @@
 
 <servlet>
 	<servlet-name>data</servlet-name>
-	<servlet-class>wsl.rdf.servlet.RdfServlet</servlet-class>
+	<servlet-class>wsl.rdf.core.RdfServlet</servlet-class>
 </servlet>
 
 <servlet-mapping>

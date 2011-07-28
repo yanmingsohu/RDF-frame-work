@@ -3,7 +3,7 @@
 package wsl.rdf.test;
 
 import jym.sim.util.Tools;
-import wsl.rdf.dao.impl.EntryItem;
+import wsl.rdf.struct.EntryItem;
 
 
 public class TestItem {

@@ -1,11 +1,11 @@
 // CatfoOD 2011-7-26 下午09:53:09
 
-package wsl.rdf.servlet.impl;
+package wsl.rdf.process;
 
-import wsl.rdf.servlet.Process;
+import wsl.rdf.core.Process;
 
 
-public class NameSpace extends Process {
+public class NameSpacePro extends Process {
 
 	private static final long serialVersionUID = 5690421270410627732L;
 

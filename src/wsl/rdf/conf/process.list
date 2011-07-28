@@ -1,4 +1,4 @@
 # 这是注释行
 # 每行一个处理器类
 
-wsl.rdf.servlet.impl.Default
+wsl.rdf.process.DefaultPro

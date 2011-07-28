@@ -1,6 +1,6 @@
 // CatfoOD 2011-7-27 下午01:48:44 yanming-sohu@sohu.com/@qq.com
 
-package wsl.rdf.servlet;
+package wsl.rdf.core;
 
 import java.io.IOException;
 

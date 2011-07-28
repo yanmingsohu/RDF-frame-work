@@ -1,18 +1,20 @@
 // CatfoOD 2011-7-27 下午03:33:25 yanming-sohu@sohu.com/@qq.com
 
-package wsl.rdf.dao.impl;
+package wsl.rdf.struct;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
-import wsl.rdf.dao.Entity;
+import wsl.rdf.core.EntityBase;
 
 
-public class EntryItem extends Entity {
+/**
+ * 负责把压入的数据转换为xml文本(通过toString())
+ */
+public class EntryItem extends EntityBase {
 	
 	public final static String TAB_CHAR = "  ";
 	
@@ -74,9 +76,10 @@ public class EntryItem extends Entity {
 
 	/**
 	 * 向一个元素中压入数据, 如果元素不存在则创建
+	 * subs[n+1] 是 subs[n] 的子元素
 	 * 
-	 * @param value - 压入当前元素或子元素的数据
-	 * @param subs - [0] 为当前元素的名字
+	 * @param value - 压入当前元素或子元素的数据, 该值赋给最后一个subs元素
+	 * @param subs - [0] 为当前元素的名字, 如果有名字空间则名字应该是:"ns:tagname"
 	 */
 	public void pushValue(Object value, String... subs) {
 		
@@ -94,14 +97,25 @@ public class EntryItem extends Entity {
 					subtag.put(subName, sub);
 				}
 				
-				String[] new_sub = Arrays.copyOfRange(subs, 1, subs.length);
-				sub.pushValue(value, new_sub);
+				sub.pushValue(value, copyArr(subs));
 			} else {
 				addValue(value);
 			}
 		} else {
 			throw new IllegalArgumentException("必须有三个以上参数");
 		}
+	}
+	
+	/** 
+	 * 跳过src第一个元素
+	 * java1.5 没有 Arrays.copyOfRange<br> 
+	 */
+	private String[] copyArr(String[] src) {
+		String[] dsc = new String[src.length-1];
+		for (int i=1; i<src.length; ++i) {
+			dsc[i-1] = src[i];
+		}
+		return dsc;
 	}
 	
 	protected void output(StringBuilder buf) {

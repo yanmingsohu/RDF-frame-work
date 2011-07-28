@@ -1,19 +1,18 @@
 // CatfoOD 2011-7-26 下午09:31:55
 
-package wsl.rdf.servlet.impl;
+package wsl.rdf.process;
 
-import wsl.rdf.dao.impl.DefaultDao;
-import wsl.rdf.dao.impl.RequestBean;
-import wsl.rdf.servlet.Process;
+import wsl.rdf.core.Process;
+import wsl.rdf.struct.RequestBean;
 
 
-public class Default extends Process {
+public class DefaultPro extends Process {
 
 	private static final long serialVersionUID = -8188101302029569350L;
 	private DefaultDao dao;
 	
 	
-	public Default() {
+	public DefaultPro() {
 		dao = new DefaultDao();
 	}
 
