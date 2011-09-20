@@ -11,25 +11,29 @@ import jym.sim.util.Tools;
 
 public abstract class DaoBase {
 	
+	public static final String DS_CONF = "/wsl/rdf/conf/datasource.conf";
+	
 	private static final Object lock = new Object();
 	private static DataSource DS = null;
+	
 	private JdbcTemplate jdbc;
 	
-	static {
+
+	private static void createDataSource() {
 		synchronized (lock) {
-			if (DS==null) {
+			while (DS==null) {
 				try {
-					PoolFactory dp = new PoolFactory("/wsl/rdf/conf/datasource.conf");
+					PoolFactory dp = new PoolFactory(DS_CONF, true);
 					DS = dp.getDataSource();
 				} catch (Exception e1) {
-					Tools.pl("数据池初始化错误");
-					e1.printStackTrace();
+					Tools.pl("数据池初始化错误, " + e1);
 				}
 			}
 		}
 	}
 	
 	public DaoBase() {
+		createDataSource();
 		jdbc = new JdbcTemplate(DS);
 	}
 	

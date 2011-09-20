@@ -27,9 +27,9 @@ rdf:Description
 		的数量
 
 rdf:about
-	-- 在rdf:Description -- 表示该行数据的URI, 该URI可以是该行数据的某一个字段的值,也可以
-		是能查询到该数据的某个页面(比如http://xxx/getName.do?name=abc&id=123 就能查询到
-		一个 html页面该页面有该rdf表示的数据)
+	-- 在rdf:Description -- 表示该行数据的URI, 该URI可以是该行数据的某一个字段的值,
+		也可以是能查询到该数据的某个页面(比如http://xxx/getName.do?name=abc&id=123 
+		就能查询到一个 html页面该页面有该rdf表示的数据)
 		该属性的意义便是RDF要实现的资源之间的互相引用，即语义网的基础，但是这个数
 		据的来源仍然需要保存在本地数据库中，如果本地数据库没有该字段，则引用本地
 		WEB实现中的HTML页面
@@ -57,6 +57,16 @@ http://localhost/rdf
 
 /data/default/?key=xxx&id=yyy
 	-- 默认的rdf查询
+
+
+==== [当前的问题] ================================================================
+
+http://zh.transwiki.org/cn/rdfprimer.htm - 主要参考文档
+
+1. 元素值没有定义具体的数据类型, rdf:datatype属性
+2. 当前数据库的结构只能支持到量个子节点
+3. name space 引用的应该是一个RDF Schema [http://dublincore.org/documents/dcmi-terms/]
+	指向哪里? 应该是 [http://purl.org/dc/elements/1.1/] ?
 
 
 ==== [src目录说明] ===============================================================

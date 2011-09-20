@@ -18,11 +18,13 @@ public class DefaultDao extends DaoBase {
 
 	public final static String ITEM_ROOT = "rdf:Description";
 	public final static String ABOUT_ATT = "rdf:about";
-	public final static String ABOUT_URI = "rdf/data/default/?id=";
+	public final static String ABOUT_URI = "/?id=";
 
 	
 	public Collection<EntryItem> search(final RequestBean model) {
+		
 		final Map<Integer, EntryItem> grps = new HashMap<Integer, EntryItem>();
+		final String aboutBase = model.getAboutBase() + ABOUT_URI;
 		
 		jdbc().query(new ISql() {
 			public void exe(Statement stm) throws Throwable {
@@ -37,7 +39,7 @@ public class DefaultDao extends DaoBase {
 						grp = new EntryItem();
 						grps.put(item_id, grp);
 						
-						grp.setAttribute(ABOUT_ATT, ABOUT_URI + item_id);
+						grp.setAttribute(ABOUT_ATT, aboutBase + item_id);
 					}
 					
 					String shortId = rs.getString(6);

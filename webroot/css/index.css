@@ -1,0 +1,19 @@
+@CHARSET "UTF-8";
+
+* {
+	font-size: 12px;
+}
+
+p {
+	margin-top: 30px;
+	margin-bottom: 30px;
+}
+
+.line {
+	height: 1px;
+	background-color: gray;
+	margin-top: 30px;
+}
+
+#validator {
+}

@@ -19,9 +19,10 @@ public class DefaultPro extends Process {
 	@Override
 	protected void exe() throws Exception {
 		RequestBean model = new RequestBean();
-		
+
 		model.setKey(getParameter("key"));
 		model.setId(getParameter("id"));
+		model.setAboutBase(getAppPath() + "/" + getRegisterName());
 		
 		setAttribute("list", dao.search(model));
 		setAttribute("ns", model.getNameSpaceDefine());

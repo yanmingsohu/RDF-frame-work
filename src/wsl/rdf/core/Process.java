@@ -121,4 +121,14 @@ public abstract class Process {
 	protected void setSessionAttr(String name, Object obj) {
 		getData().setSessionAttribute(name, obj);
 	}
+	
+	/**
+	 * 取得当前应用的路径: http://localhost/rdf/default
+	 */
+	protected String getAppPath() {
+		HttpServletRequest req = getData().getHttpServletRequest();
+		
+		return "http://" + req.getServerName() + ":" + req.getServerPort()
+			   + req.getContextPath() + req.getServletPath();
+	}
 }

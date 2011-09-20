@@ -3,48 +3,58 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>RDF</title>
-<style type="text/css">
-* {
-font-size: 12px;
-}
-
-p {
-margin-top: 30px;
-margin-bottom: 30px;
-}
-
-.line {
-height: 1px;
-background-color: gray;
-margin-top: 30px;
-}
-</style>
+<link rel="stylesheet" type="text/css" href="css/index.css">
+<script type="text/javascript" src="js/common.js"></script>
+<script type="text/javascript" src="js/ajax.js"></script>
 </head>
+
 <body>
 
-<h3>RDF索引页</h3>
+<br/><br/>
+<h2>RDF索引页</h2>
+
 <div class='line'></div>
 
-<p>
-检索一个RDF资源:(ID条件优先级最高)
-</p>
-
-
-<form action="data/default/">
+<p>检索一个RDF资源:(ID条件优先级最高)</p>
+<form action="data/default/" target="_blank" id='search'>
 	模糊搜索单词<input name="key"/><br/>
-	精确查询ID号<input name='id'/>
-	<input type='submit' value="RDF search"/>
+	精确查询ID号<input name='id'/><br/>
+	<input type='submit' value="查询 RDF"/>
+	<input type='button' value="验证 RDF" id='parse'/>
 </form>
 
 <div class='line'></div>
 
-<p>
-	使用chrome游览器可以直接查看RDF文件,IE需要另存
-</p>
+<p>如果弹出窗口被拦截,则需要手动递交</p>
+<form action="http://www.w3.org/RDF/Validator/ARPServlet" 
+	id="validator" method="post" target="_blank">
+<textarea name="RDF" id='rdf_text' rows="8" cols="80">
+</textarea><br/>
+	<input type='submit' value='递交到验证器'/> 
+	<a href="http://www.w3.org/RDF/Validator/" target="_blank">打开RDF验证器页面</a>
+</form>
+
+
+<div class='line'></div>
 
 <p>
-	在源文件wsl/rdf/conf/datasource.conf中配置数据库连接
+使用chrome游览器可以直接查看RDF文件,IE需要另存, 递交验证时可能游览器会拦截跨站脚本
+<br/>
+在源文件wsl/rdf/conf/datasource.conf中配置数据库连接
 </p>
+
+<script type="text/javascript">
+var $ = function(_id) { return document.getElementById(_id); }
+
+$('parse').onclick = function() {
+	var form = new ajaxform('search');
+	form.setTextListener(function(text) {
+		$('rdf_text').value = text;
+		$('validator').submit();
+	});
+	form.send();
+}
+</script>
 
 </body>
 </html>

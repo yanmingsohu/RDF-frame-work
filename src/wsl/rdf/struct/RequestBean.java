@@ -16,6 +16,7 @@ public class RequestBean {
 	
 	private String	key;
 	private Integer	id;
+	private String	aboutBase;
 	
 	
 	public RequestBean() {
@@ -65,5 +66,11 @@ public class RequestBean {
 		try {
 			this.id = new Integer(id);
 		} catch(Exception e) {}
+	}
+	public String getAboutBase() {
+		return aboutBase;
+	}
+	public void setAboutBase(String aboutBase) {
+		this.aboutBase = aboutBase;
 	}
 }

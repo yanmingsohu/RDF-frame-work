@@ -13,8 +13,8 @@ public class TestItem {
 		EntryItem ei = new EntryItem();
 //		ei.pushValue("hello",  "dc", "a", "b", "c", null);
 //		ei.pushValue("hello2", "dc", "a", "b", "d", null);
-//		ei.pushValue("hello3", "dc", "a", "b", "d", null);
-		ei.pushValue("hello3", "b", null);
+		ei.pushValue("hello3", "dc", "a", "b", "d", null);
+		ei.pushValue("hello9", "b", null);
 		Tools.pl(ei);
 	}
 
