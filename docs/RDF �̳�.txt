@@ -1,0 +1,486 @@
+RDF (GBK)
+RDF 教程.........................................................................................................................................1
+内容目录...........................................................................................................................1
+RDF 简介.........................................................................................................................................2
+您应当具备的基础知识...........................................................................................................2
+什么是 RDF？.........................................................................................................................2
+RDF - 应用举例.......................................................................................................................2
+RDF 被设计为可被计算机读取.............................................................................................2
+RDF 使用 XML 编写............................................................................................................3
+RDF 和语义网.........................................................................................................................3
+RDF 是 W3C 标准................................................................................................................3
+RDF 规则.........................................................................................................................................4
+RDF 资源、属性和属性值.....................................................................................................4
+RDF 陈述.................................................................................................................................4
+RDF 实例.........................................................................................................................................6
+RDF 实例.................................................................................................................................6
+RDF 在线验证器.....................................................................................................................7
+RDF 主要元素.................................................................................................................................8
+<rdf:RDF> 元素.......................................................................................................................8
+<rdf:Description> 元素............................................................................................................8
+属性（property）来定义属性（attribute）............................................................................9
+属性定义资源...........................................................................................................................9
+RDF 容器元素...............................................................................................................................10
+<rdf:Bag> 元素......................................................................................................................10
+实例.................................................................................................................................10
+<rdf:Seq> 元素......................................................................................................................10
+实例.................................................................................................................................11
+<rdf:Alt> 元素.......................................................................................................................11
+实例.................................................................................................................................11
+RDF 术语...............................................................................................................................12
+RDF 集合.......................................................................................................................................13
+rdf:parseType="Collection" 属性..........................................................................................13
+实例.................................................................................................................................13
+RDF Schema (RDFS).....................................................................................................................14
+RDF Schema 和应用程序的类...........................................................................................14
+RDF Schema (RDFS)..............................................................................................................14
+RDFS 实例.............................................................................................................................14
+简写的例子.............................................................................................................................15
+RDF 都柏林核心元数据倡议.......................................................................................................16
+Dublin 核心...........................................................................................................................16
+RDF 实例...............................................................................................................................16
+RDF 教程
+资源描述框架 (RDF) 是描述网络中资源的 W3C 标准。
+RDF 是一个框架，用来描述网络资源，诸如网页的标题、作者、修改日期、内容以及版权信息等。
+开始学习 RDF ！
+内容目录
+RDF 简介
+本章讲解 RDF 的概念和作用。
+RDF 规则
+本章讲解在 RDF 中被用到的语法和术语。
+RDF 实例
+本章讲解一个 RDF 实例。
+RDF 元素
+本章讲解 RDF 的主要元素: <RDF> 和 <Description>。
+RDF 容器
+RDF 容器用于描述事物的分组。本章讲解 RDF 的容器元素: <Bag>、<Seq> 和<Alt>。
+RDF 集合
+RDF 集合被用来描述仅包含指定成员的组。本章讲解如何描述集合。
+RDF Schema
+本章讲解 RDF Schema 对 RDF 的扩展。
+RDF 都柏林核心
+本章内容关于 DCMI，DCMI 提供描述网络对象的属性。
+RDF OWL
+本章阐述构建于 RDF 之上的 OWL 语言。
+RDF 参考手册
+本章包含了完整的 RDF 参考手册。
+1
+RDF 简介
+资源描述框架（RDF）是用于描述网络资源的 W3C 标准，比如网页的标题、作者、修改日期、内容以及版权信息。
+您应当具备的基础知识
+在继续学习之前，您需要对下面的知识有基本的了解：
+.
+HTML
+.
+XHTML
+.
+XML
+.
+XML 命名空间
+如果您希望首先学习这些项目，请访问我们的 首页。
+什么是 RDF？
+.
+RDF 指资源描述框架（Resource Description Framework）
+.
+RDF 是一个用于描述 Web 上的资源的框架
+.
+RDF 提供了针对数据的模型以及语法，这样独立的团体们就可以交换和使用它
+.
+RDF 被设计为可被计算机阅读和理解
+.
+RDF 被设计的目的不是为了向人们显示出来
+.
+RDF 使用 XML 编写
+.
+RDF 是 W3C 语义网络活动的组成部分
+.
+RDF 是一个 W3C 推荐标准
+RDF - 应用举例
+.
+描述购物项目的属性，比如价格以及可用性
+.
+描述 Web 事件的时间表
+.
+描述有关网页的信息，比如内容、作者以及被创建和修改的日期
+.
+描述网络图片的内容和等级
+.
+描述针对搜索引擎的内容
+.
+描述电子图书馆
+RDF 被设计为可被计算机读取
+RDF 被设计为提供一种描述信息的通用方法，这样就可以被计算机应用程序读取并理解。
+2
+RDF 描述不是被设计用来在网络上显示的。
+RDF 使用 XML 编写
+RDF 文档使用 XML 编写。被 RDF 使用的 XML 语言被称为 RDF/XML。
+通过使用 XML，RDF 信息可以轻易地在使用不同类型的操作系统和应用语言的计算机之间进行交换。
+RDF 和语义网
+RDF 语言是 W3C 的语义网活动的组成部分。W3C 的“语义网远景 (Semantic Web Vision)”的目标是：
+.
+Web 信息拥有确切的含义
+.
+Web 信息可被计算机理解并处理
+.
+计算机可从 Web 上整合信息
+RDF 是 W3C 标准
+RDF 在 2004 年 2 月成为 W3C 标准。
+W3C 推荐（标准）被业界以及 web 团体奉为 web 标准。W3C推荐标准 是由 W3C 工作组开发并经 W3C 成员评审的稳定规范。
+可以通过此链接找到官方的 W3C 推荐标准。
+http://www.w3.org/RDF/ 3
+RDF 规则
+RDF 使用 Web 标识符 (URIs) 来标识资源。
+RDF 使用属性和属性值来描述资源。
+RDF 资源、属性和属性值
+RDF 使用 Web 标识符来标识事物，并通过属性和属性值来描述资源。
+对资源、属性和属性值的解释：
+.
+资源是可拥有 URI 的任何事物，比如 "http://www.w3school.com.cn/rdf"
+.
+属性是拥有名称的资源，比如 "author" 或 "homepage"
+.
+属性值是某个属性的值，比如 "David" 或 "http://www.w3school.com.cn" （请注意一个属性值可以是另外一个资源）
+下面的 RDF 文档可描述资源 "http://www.w3school.com.cn/rdf"：
+<?xml version="1.0"?>
+<RDF>
+<Description about="http://www.w3school.com.cn/RDF">
+<author>David</author>
+<homepage>http://www.w3school.com.cn</homepage>
+</Description>
+</RDF>
+提示：上面是一个简化的例子。命名空间被忽略了。
+RDF 陈述
+资源、属性和属性值的组合可形成一个陈述（被称为陈述的主体、谓语和客体）。
+请看一些陈述的具体例子，来加深理解：
+陈述："The author of http://www.w3school.com.cn/rdf is David."
+.
+陈述的主体是：http://www.w3school.com.cn/rdf
+.
+谓语是：author
+.
+客体是：David
+4
+陈述："The homepage of http://www.w3school.com.cn/rdf is http://www.w3school.com.cn".
+.
+陈述的主体是：http://www.w3school.com.cn/rdf
+.
+谓语是：homepage
+.
+客体是：http://www.w3school.com.cn
+5
+RDF 实例
+RDF 实例
+这是一个 CD 列表的其中几行:
+Title
+Artist
+Country
+Company
+Price
+Year
+Empire Burlesque
+Bob Dylan
+USA
+Columbia
+10.90
+1985
+Hide your heart
+Bonnie Tyler
+UK
+CBS Records
+9.90
+1988
+...
+这是一个 RDF 文档的其中几行：
+<?xml version="1.0"?>
+<rdf:RDF
+xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+xmlns:cd="http://www.recshop.fake/cd#">
+<rdf:Description
+rdf:about="http://www.recshop.fake/cd/Empire Burlesque">
+<cd:artist>Bob Dylan</cd:artist>
+<cd:country>USA</cd:country>
+<cd:company>Columbia</cd:company>
+<cd:price>10.90</cd:price>
+<cd:year>1985</cd:year>
+</rdf:Description>
+<rdf:Description
+rdf:about="http://www.recshop.fake/cd/Hide your heart">
+<cd:artist>Bonnie Tyler</cd:artist>
+<cd:country>UK</cd:country>
+<cd:company>CBS Records</cd:company>
+<cd:price>9.90</cd:price>
+<cd:year>1988</cd:year>
+</rdf:Description>
+.
+.
+.
+</rdf:RDF>
+6
+此 RDF 文档的第一行是 XML 声明。这个 XML 声明之后是 RDF 文档的根元素：<rdf:RDF>。
+xmlns:rdf 命名空间，规定了带有前缀 rdf 的元素来自命名空间 "http://www.w3.org/1999/02/22-rdf-syntax-ns#"。
+xmlns:cd 命名空间，规定了带有前缀 cd 的元素来自命名空间 "http://www.recshop.fake/cd#"。
+<rdf:Description> 元素包含了对被 rdf:about 属性标识的资源的描述。
+元素：<cd:artist>、<cd:country>、<cd:company> 等是此资源的属性。
+RDF 在线验证器
+W3C 的 RDF 验证服务在您学习 RDF 时是很有帮助的。在此您可对 RDF 文件进行试验。
+RDF 在线验证器可解析您的 RDF 文档，检查其中的语法，并为您的 RDF 文档生成表格和图形视图。
+把下面这个例子拷贝粘贴到 W3C 的 RDF 验证器：
+<?xml version="1.0"?>
+<rdf:RDF
+xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+xmlns:si="http://www.recshop.fake/siteinfo#">
+<rdf:Description rdf:about="http://www.w3school.com.cn/RDF">
+<si:author>David</si:author>
+<si:homepage>http://www.w3school.com.cn</si:homepage>
+</rdf:Description>
+</rdf:RDF>
+在您对上面的例子进行解析后，结果将是类似这样的。
+7
+RDF 主要元素
+RDF 的主要元素是 <RDF> 以及可表示某个资源的 <Description> 元素。
+<rdf:RDF> 元素
+<rdf:RDF> 是一个 RDF 文档的根元素。它把 XML 文档定义为一个 RDF 文档。它也包含了对 RDF 命名空间的引用：
+<?xml version="1.0"?>
+<rdf:RDF
+xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+.
+. Description goes here
+.
+</rdf:RDF>
+<rdf:Description> 元素
+<rdf:Description> 元素可通过 about 属性标识一个资源。
+<rdf:Description> 元素可包含描述资源的那些元素：
+<?xml version="1.0"?>
+<rdf:RDF
+xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+xmlns:cd="http://www.recshop.fake/cd#">
+<rdf:Description
+rdf:about="http://www.recshop.fake/cd/Empire Burlesque">
+<cd:artist>Bob Dylan</cd:artist>
+<cd:country>USA</cd:country>
+<cd:company>Columbia</cd:company>
+<cd:price>10.90</cd:price>
+<cd:year>1985</cd:year>
+</rdf:Description>
+</rdf:RDF>
+8
+artist、country、company、price 以及 year 这些元素被定义在命名空间 http://www.recshop.fake/cd# 中。此命名空间在 RDF 之外（并非 RDF 的组成部分）。RDF 仅仅定义了这个框架。而 artist、country、company、price 以及 year 这些元素必须被其他人（公司、组织或个人等）进行定义。
+属性（property）来定义属性（attribute）
+属性元素（property elements）也可作为属性（attributes）来被定义（取代元素）：
+<?xml version="1.0"?>
+<rdf:RDF
+xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+xmlns:cd="http://www.recshop.fake/cd#">
+<rdf:Description
+rdf:about="http://www.recshop.fake/cd/Empire Burlesque"
+cd:artist="Bob Dylan" cd:country="USA"
+cd:company="Columbia" cd:price="10.90"
+cd:year="1985" />
+</rdf:RDF>
+属性定义资源
+属性元素（property elements）也可被作为资源（resources）来被定义：
+在上面的例子中，属性 artist 没有值，但是却引用了一个对包含有关艺术家的信息的资源。
+<?xml version="1.0"?>
+<rdf:RDF
+xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+xmlns:cd="http://www.recshop.fake/cd#">
+<rdf:Description
+rdf:about="http://www.recshop.fake/cd/Empire Burlesque">
+<cd:artist rdf:resource="http://www.recshop.fake/cd/dylan" />
+.
+.
+</rdf:Description>
+</rdf:RDF>
+9
+RDF 容器元素
+RDF 容器用于描述一组事物。举个例子，把某本书的作者列在一起。
+下面的 RDF 元素用于描述这些的组：<Bag>、<Seq> 以及 <Alt>。
+<rdf:Bag> 元素
+<rdf:Bag> 元素用于描述一个规定为无序的值的列表。
+<rdf:Bag> 元素可包含重复的值。
+实例
+<?xml version="1.0"?>
+<rdf:RDF
+xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+xmlns:cd="http://www.recshop.fake/cd#">
+<rdf:Description
+rdf:about="http://www.recshop.fake/cd/Beatles">
+<cd:artist>
+<rdf:Bag>
+<rdf:li>John</rdf:li>
+<rdf:li>Paul</rdf:li>
+<rdf:li>George</rdf:li>
+<rdf:li>Ringo</rdf:li>
+</rdf:Bag>
+</cd:artist>
+</rdf:Description>
+</rdf:RDF>
+<rdf:Seq> 元素
+<rdf:Seq> 元素用于描述一个规定为有序的值的列表（比如一个字母顺序的排序）。
+<rdf:Bag> 元素可包含重复的值。
+10
+实例
+<?xml version="1.0"?>
+<rdf:RDF
+xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+xmlns:cd="http://www.recshop.fake/cd#">
+<rdf:Description
+rdf:about="http://www.recshop.fake/cd/Beatles">
+<cd:artist>
+<rdf:Seq>
+<rdf:li>George</rdf:li>
+<rdf:li>John</rdf:li>
+<rdf:li>Paul</rdf:li>
+<rdf:li>Ringo</rdf:li>
+</rdf:Seq>
+</cd:artist>
+</rdf:Description>
+</rdf:RDF>
+<rdf:Alt> 元素
+<rdf:Alt> 元素用于一个可替换的值的列表（用户仅可选择这些值的其中之一）。
+实例
+<?xml version="1.0"?>
+<rdf:RDF
+xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+xmlns:cd="http://www.recshop.fake/cd#">
+<rdf:Description
+rdf:about="http://www.recshop.fake/cd/Beatles">
+<cd:format>
+<rdf:Alt>
+<rdf:li>CD</rdf:li>
+<rdf:li>Record</rdf:li>
+<rdf:li>Tape</rdf:li>
+</rdf:Alt>
+11
+</cd:format>
+</rdf:Description>
+</rdf:RDF>
+RDF 术语
+在上面的例子中，我们在描述容器元素时已经讨论了“值的列表”。在 RDF 中，这些“值的列表”被称为成员（members）。
+因此，我们可以这么说：
+.
+一个容器是一个包含事物的资源
+.
+被包含的事物被称为成员（不能称为“值的列表”）。
+12
+RDF 集合
+RDF 集合用于描述仅包含指定成员的组。
+rdf:parseType="Collection" 属性
+正如在前面的章节所看到的，我们无法关闭一个容器。容器规定了所包含的资源为成员 - 它没有规定其他的成员是不被允许的。
+RDF 集合用于描述仅包含指定成员的组。
+集合是通过属性 rdf:parseType="Collection" 来描述的。
+实例
+<?xml version="1.0"?>
+<rdf:RDF
+xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+xmlns:cd="http://recshop.fake/cd#">
+<rdf:Description
+rdf:about="http://recshop.fake/cd/Beatles">
+<cd:artist rdf:parseType="Collection">
+<rdf:Description rdf:about="http://recshop.fake/cd/Beatles/George"/>
+<rdf:Description rdf:about="http://recshop.fake/cd/Beatles/John"/>
+<rdf:Description rdf:about="http://recshop.fake/cd/Beatles/Paul"/>
+<rdf:Description rdf:about="http://recshop.fake/cd/Beatles/Ringo"/>
+</cd:artist>
+</rdf:Description>
+</rdf:RDF>
+13
+RDF Schema (RDFS)
+RDF Schema (RDFS) 是对 RDF 的一种扩展。
+RDF Schema 和应用程序的类
+RDF 通过类、属性和值来描述资源。
+此外，RDF 还需要一种定义应用程序专业的类和属性的方法。应用程序专用的类和属性必须使用对 RDF 的扩展来定义。
+RDF Schema 就是这样一种扩展。
+RDF Schema (RDFS)
+RDF Schema 不提供实际的应用程序专用的类和属性，而是提供了描述应用程序专用的类和属性的框架。
+RDF Schema 中的类与面向对象编程语言中的类非常相似。这就使得资源能够作为类的实例和类的子类来被定义。
+RDFS 实例
+下面的实例演示了 RDFS 的能力的某些方面：
+<?xml version="1.0"?>
+<rdf:RDF
+xmlns:rdf= "http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+xml:base= "http://www.animals.fake/animals#">
+<rdf:Description rdf:ID="animal">
+<rdf:type
+rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+</rdf:Description>
+<rdf:Description rdf:ID="horse">
+<rdf:type
+rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+<rdfs:subClassOf rdf:resource="#animal"/>
+14
+</rdf:Description>
+</rdf:RDF>
+在上面的例子中，资源 "horse" 是类 "animal" 的子类。
+简写的例子
+由于一个 RDFS 类就是一个 RDF 资源，我们可以通过使用 rdfs:Class 取代 rdf:Description，并去掉 rdf:type 信息，来把上面的例子简写一下：
+<?xml version="1.0"?>
+<rdf:RDF
+xmlns:rdf= "http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+xml:base= "http://www.animals.fake/animals#">
+<rdfs:Class rdf:ID="animal" />
+<rdfs:Class rdf:ID="horse">
+<rdfs:subClassOf rdf:resource="#animal"/>
+</rdfs:Class>
+</rdf:RDF>
+就是这样的！
+15
+RDF 都柏林核心元数据倡议
+都柏林核心元数据倡议 (DCMI) 已创建了一些供描述文档的预定义属性。
+Dublin 核心
+RDF 是元数据（关于数据的数据）。RDF 被用于描述信息资源。
+都柏林核心是一套供描述文档的预定义属性。
+第一份都柏林核心属性是于1995年 在俄亥俄州的都柏林的元数据工作组被定义的，目前由都柏林元数据倡议来维护。
+属性
+定义
+Contributor
+一个负责为资源内容作出贡献的实体(如作者)。
+Coverage
+资源内容的氛围或作用域
+Creator
+一个主要负责创建资源内容的实体。
+Format
+物理或数字的资源表现形式。
+Date
+在资源生命周期中某事件的日期。
+Description
+对资源内容的说明。
+Identifier
+一个对在给定上下文中的资源的明确引用
+Language
+资源智力内容所用的语言。
+Publisher
+一个负责使得资源内容可用的实体
+Relation
+一个对某个相关资源的引用
+Rights
+有关保留在资源之内和之上的权利的信息
+Source
+一个对作为目前资源的来源的资源引用。
+Subject
+一个资源内容的主题
+Title
+一个给资源起的名称
+Type
+资源内容的种类或类型。
+通过浏览上面这个表格，我们可以发现 RDF 是非常适合表示都柏林核心信息的。
+RDF 实例
+下面的例子演示了都柏林核心属性在一个 RDF 文档中的使用：
+<?xml version="1.0"?>
+<rdf:RDF
+16
+17
+xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+xmlns:dc= "http://purl.org/dc/elements/1.1/">
+<rdf:Description rdf:about="http://www.w3school.com.cn">
+<dc:title>D-Lib Program</dc:title>
+<dc:description>W3School - Free tutorial</dc:description>
+<dc:publisher>w3school Data as</dc:publisher>
+<dc:date>2008-01-01</dc:date>
+<dc:type>Web Development</dc:type>
+<dc:format>text/html</dc:format>
+<dc:language>en</dc:language>
+</rdf:Description>
+</rdf:RDF>

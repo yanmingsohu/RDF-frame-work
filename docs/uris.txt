@@ -1,0 +1,28 @@
+ 
+点击：http://www4.wiwiss.fu-berlin.de/rdf_browser/
+在地址栏输入这个：
+http://www.progeny.net//People/MattFisher/files/foaf.rdf#me
+
+ 
+一些有关的资料：有很多例子
+http://www4.wiwiss.fu-berlin.de/bizer/ng4j/disco/
+http://www4.wiwiss.fu-berlin.de/bizer/bookmashup/
+http://www.w3.org/TR/rdf-syntax-grammar/#section-rdf-in-HTML
+http://www.w3school.com.cn/rdf/rdf_rules.asp
+
+
+
+
+http://www.openrdf.org/doc/sesame2/users/
+SPARQL and SeRQL ??
+
+
+
+able 9.1. Default namespaces
+
+Prefix	Namespace
+rdf	http://www.w3.org/1999/02/22-rdf-syntax-ns#
+rdfs	http://www.w3.org/2000/01/rdf-schema#
+xsd	http://www.w3.org/2001/XMLSchema#
+owl	http://www.w3.org/2002/07/owl#
+sesame	http://www.openrdf.org/schema/sesame#
